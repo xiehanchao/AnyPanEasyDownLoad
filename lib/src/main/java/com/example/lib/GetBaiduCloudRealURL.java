@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class GetBaiduCloudRealURL {
     // 定义一些全局变量
-    private static String url = "https://pan.baidu.com/s/1eQrwbKY";// 资源地址
+    private static String url = "https://pan.baidu.com/s/18jmzAl_7Pgi3lgqPsSt7GA";// 资源地址
     private static String cookie = null;
     private static final String getvcodeURL = "https://pan.baidu.com/api/getvcode?prod=pan";// 请求vcode地址，不变
     private static boolean isDownload = true;//标记是否需要下载文件，false就只获取地址
@@ -37,8 +37,12 @@ public class GetBaiduCloudRealURL {
         // 拼接post的url地址
         String post_url = getPostUrl(params);
 
+        System.out.println("post的请求为 = " + post_url);
+
         // 拼接post携带的参数
         Map<String, String> data = getPostData(params);
+
+        System.out.println("拼接的参数为 = " + data);
 
         // 发送post请求
         String responseJson = HttpUtils.post(post_url, data, cookie);
@@ -103,6 +107,7 @@ public class GetBaiduCloudRealURL {
         sb1.append("&clienttype=0");
         sb1.append("&web=1");
         sb1.append("&app_id=" + params.get("app_id"));
+        sb1.append("&logid=" + "MTU0MDgwNzY2NzIxNDAuNTM5MzEyODQ3MjI2ODE3Ng==");
         String post_url = sb1.toString();
         System.out.println("POST请求的网址：" + post_url);
 
@@ -118,9 +123,9 @@ public class GetBaiduCloudRealURL {
         data.put("encrypt", "0");
         data.put("product", "share");
         data.put("uk", params.get("uk"));
-        data.put("primaryid", params.get("primaryid"));
+        data.put("primaryid", params.get("shareid"));
         // 添加了[]，解码就是%5B %5D
-        data.put("fid_list", "%5B" + params.get("fid_list") + "%5D");
+        data.put("fid_list", "[" + params.get("fid_list") + "]");
         data.put("path_list", "");// 可以不写
 
         return data;
