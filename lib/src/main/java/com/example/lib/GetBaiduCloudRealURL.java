@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 
 public class GetBaiduCloudRealURL {
     // 定义一些全局变量
-    private static String url = "https://pan.baidu.com/s/18jmzAl_7Pgi3lgqPsSt7GA";// 资源地址
+    private static String url = "https://pan.baidu.com/s/1ULWyDEM_jIIXSckfGgF0AQ";// 资源地址
     private static String cookie = null;
     private static final String getvcodeURL = "https://pan.baidu.com/api/getvcode?prod=pan";// 请求vcode地址，不变
     private static boolean isDownload = true;//标记是否需要下载文件，false就只获取地址
@@ -107,7 +107,7 @@ public class GetBaiduCloudRealURL {
         sb1.append("&clienttype=0");
         sb1.append("&web=1");
         sb1.append("&app_id=" + params.get("app_id"));
-        sb1.append("&logid=" + "MTU0MDgwNzY2NzIxNDAuNTM5MzEyODQ3MjI2ODE3Ng==");
+        sb1.append("&logid=MTU0MDg3MTkzMDIxMTAuNDQ1OTE0OTMyNTE4NTQwMw==");
         String post_url = sb1.toString();
         System.out.println("POST请求的网址：" + post_url);
 

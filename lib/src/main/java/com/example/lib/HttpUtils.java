@@ -222,6 +222,11 @@ public class HttpUtils {
             connection.setRequestMethod("POST"); // 设置请求方式
             connection.setRequestProperty("Accept", "*/*"); // 设置接收数据的格式
             connection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8"); // 设置发送数据的格式
+            connection.setRequestProperty("Origin", "https://pan.baidu.com"); // 设置发送数据的格式
+            connection.setRequestProperty("X-Requested-with", "XMLHttpRequest"); // 设置发送数据的格式
+            connection.setRequestProperty("User-Agent", "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36"); // 设置发送数据的格式
+            connection.setRequestProperty("Referer", "https://pan.baidu.com/s/1ULWyDEM_jIIXSckfGgF0AQ"); // 设置发送数据的格式
+
             if (null != cookie) {
                 System.out.println("携带的Cookie:" + cookie);
                 connection.setRequestProperty("Cookie", cookie);
