@@ -211,7 +211,7 @@ public class HttpUtils {
      *
      * @return 成功:返回json字符串<br/>
      */
-    public static String  ppost(String strURL, Map<String, String> params, String cookie) {
+    public static String  post(String strURL, Map<String, String> params, String cookie) {
         try {
             URL url = new URL(strURL);// 创建连接
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
